@@ -1,0 +1,25 @@
+@use '@/styles/variables' as *;
+
+.header {
+	// padding: 20px;
+	position: sticky;
+	z-index: 100;
+	top: 0;
+	color: $beg_color;
+	&__container {
+		// display: flex;
+		// gap: 20px;
+		// justify-content: space-between;
+		// align-items: center;
+	}
+	&__menu {
+		// display: flex;
+		// gap: 60px;
+		// justify-content: center;
+		// align-items: center;
+		a {
+			color: $beg_color;
+			font-weight: 300;
+		}
+	}
+}

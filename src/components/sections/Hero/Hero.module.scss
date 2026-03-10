@@ -1,0 +1,82 @@
+@use '@/styles/variables' as *;
+
+.hero {
+	// margin-top: -80px;
+	padding: 200px 0 72px 0;
+	background: url('../../../assets/img/bgmain.webp') center center/cover
+		no-repeat;
+	&__main {
+		h1 {
+			max-width: 900px;
+			margin: 0 auto;
+			font-size: 127px;
+			font-weight: 500;
+			color: $beg_color;
+			line-height: 90%;
+		}
+	}
+	&__accent {
+		font-family: var(--font-cormorant);
+		font-weight: 300;
+		font-size: 160px;
+
+		@media (max-width: 1200px) {
+			font-size: 120px;
+		}
+
+		@media (max-width: 768px) {
+			font-size: 80px;
+		}
+	}
+	&__btnImage {
+		position: absolute;
+		display: block;
+		inset: 0;
+		width: 100%;
+		left: 0px;
+		top: 0;
+		height: 100%;
+		z-index: 0;
+		fill: $beg_color;
+		transition: 0.2s linear;
+	}
+	&__arrowdia {
+		display: block;
+		width: 12px;
+		height: 12px;
+		position: absolute;
+		top: 30px;
+		left: 41px;
+		z-index: 1;
+	}
+	&__video {
+		img {
+			border-radius: 32px;
+		}
+	}
+	&__box {
+		display: flex;
+		gap: 100px;
+		align-items: center;
+		justify-content: space-between;
+		padding: 35px 60px;
+		margin-top: 90px;
+		border-radius: 14px;
+		background-color: $beg_color;
+		p {
+			max-width: 600px;
+			font-size: 24px;
+			line-height: 130%;
+			font-weight: 300;
+			color: $brown_main;
+			span {
+				display: block;
+				padding-top: 24px;
+
+				font-size: 16px;
+				line-height: 130%;
+				font-weight: 300;
+			}
+		}
+	}
+}
