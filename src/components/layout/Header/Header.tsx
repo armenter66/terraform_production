@@ -1,11 +1,27 @@
+'use client';
 import Link from 'next/link';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import logo from '../../../assets/svg/logo.svg';
 import styles from './Header.module.scss';
 
 export default function Header() {
+	const [scrolled, setScrolled] = useState(false);
+
+	useEffect(() => {
+		const handleScroll = () => {
+			setScrolled(window.scrollY > 100);
+		};
+
+		window.addEventListener('scroll', handleScroll);
+
+		return () => window.removeEventListener('scroll', handleScroll);
+	}, []);
+
 	return (
-		<header className={`${styles.header} pt-[20px] pb-[20px]`}>
+		<header
+			className={`${styles.header} ${scrolled ? styles.scrolled : ''} pt-[20px] pb-[20px]`}
+		>
 			<div className='container'>
 				<div
 					className={`${styles.header__container} flex gap-[20px] justify-between items-center`}

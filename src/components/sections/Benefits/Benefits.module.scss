@@ -1,0 +1,90 @@
+@use '@/styles/variables' as *;
+
+.benefits {
+	padding: 200px 0;
+	&__title {
+		font-weight: $medium550;
+		font-size: 72px;
+		line-height: 100%;
+		position: relative;
+		max-width: 1300px;
+		span {
+			display: block;
+			font-weight: $light300;
+			padding-left: 400px;
+		}
+		img {
+			position: absolute;
+			right: 0;
+			top: -100px;
+			max-width: 240px;
+		}
+	}
+	a {
+		padding: 24px;
+		margin-top: auto;
+		display: block;
+		border: 1px solid $brown_main;
+		border-radius: 14px;
+		max-width: 470px;
+		width: 100%;
+		position: relative;
+		transition: 0.2s linear;
+		cursor: pointer;
+
+		font-weight: $bold700;
+		font-size: 24px;
+		line-height: 110%;
+		color: $brown_main;
+		span {
+			display: block;
+			font-weight: 400;
+		}
+		svg {
+			margin-top: 15px;
+			margin-left: auto;
+			fill: $brown_main;
+		}
+		&:hover {
+			background-color: $brown_light;
+			color: $beg_color;
+			span {
+				color: $beg_color;
+			}
+			svg {
+				fill: $beg_color;
+			}
+		}
+	}
+	&__container {
+		margin-top: 120px;
+		display: flex;
+		justify-content: space-between;
+		gap: 110px;
+	}
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 72px;
+		&__row {
+			display: flex;
+			gap: 80px;
+		}
+		&__item {
+			max-width: 350px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+			h4 {
+				font-size: 32px;
+				font-weight: $roman;
+                line-height: 110%;
+			}
+            p {
+                padding-top: 32px;
+                font-size: 18px;
+                font-weight: $light300;
+            }
+		}
+	}
+}

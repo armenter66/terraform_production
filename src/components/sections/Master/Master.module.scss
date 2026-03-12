@@ -1,0 +1,135 @@
+@use '@/styles/variables' as *;
+
+.master {
+	background-color: $beg_color;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		gap: 100px;
+		align-items: flex-end;
+		flex-wrap: nowrap;
+		h2 {
+			display: flex;
+			padding-top: 35px;
+			gap: 40px;
+			flex-wrap: nowrap;
+			align-items: flex-end;
+			font-size: 120px;
+			font-weight: $medium550;
+			line-height: 70%;
+			span {
+				font-weight: 400;
+				font-size: 45px;
+				line-height: 90%;
+			}
+		}
+		p {
+			max-width: 580px;
+			font-size: 24px;
+			line-height: 140%;
+			color: $brown_main;
+			font-weight: $light300;
+		}
+	}
+	&__box {
+		position: relative;
+		margin-top: 120px;
+		padding: 30px 140px 80px 140px;
+		border: 1px solid $brown_main;
+		border-radius: 32px;
+		&__header {
+			display: flex;
+			gap: 60px;
+			justify-content: space-between;
+			padding: 0 20px;
+			background-color: $beg_color;
+			z-index: 5;
+			position: relative;
+			// max-width: 1100px;
+			// margin: 0 auto;
+			top: -60px;
+			&__item {
+				display: flex;
+				gap: 32px;
+				align-items: center;
+				max-width: 420px;
+				h4 {
+					font-size: 18px;
+					line-height: 120%;
+					font-weight: 400;
+				}
+			}
+			h2 {
+				font-size: 40px;
+				line-height: 90%;
+				font-weight: $light300;
+				max-width: 450px;
+				b {
+					font-weight: $medium550;
+				}
+			}
+		}
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			z-index: 0;
+		}
+		&__body {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 130px;
+			// max-width: 1100px;
+			margin: 0 auto;
+			padding: 0 20px;
+			&__column1,
+			&__column2 {
+				max-width: 420px;
+				display: flex;
+				flex-direction: column;
+				gap: 50px;
+			}
+			&__item {
+				display: flex;
+				gap: 32px;
+				align-items: center;
+				h4 {
+					font-size: 18px;
+					line-height: 120%;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+	&__footer {
+		display: flex;
+		padding-top: 200px;
+		justify-content: space-between;
+		gap: 100px;
+		h3 {
+			max-width: 570px;
+			font-size: 62px;
+			font-weight: $medium550;
+			color: $brown_main;
+			line-height: 100%;
+		}
+		&__desc {
+			font-weight: $light300;
+			font-size: 24px;
+			line-height: 140%;
+			color: $brown_main;
+			max-width: 540px;
+			span {
+				display: block;
+				padding-top: 50px;
+			}
+			h5 {
+				padding-top: 50px;
+				font-weight: $medium550;
+				font-size: 32px;
+			}
+		}
+	}
+}

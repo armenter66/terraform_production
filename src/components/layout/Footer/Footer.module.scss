@@ -1,0 +1,110 @@
+@use '@/styles/variables' as *;
+
+.footer {
+	background-color: $brown-main;
+	padding: 85px 0;
+	&__container {
+		display: flex;
+		justify-content: space-between;
+		gap: 135px;
+	}
+	&__item1 {
+		display: flex;
+		flex-direction: column;
+		gap: 52px;
+		justify-content: space-between;
+		p {
+			font-weight: $light300;
+			font-size: 20px;
+			line-height: 120%;
+			color: $beg-color;
+			span {
+				display: block;
+				font-weight: $medium550;
+			}
+		}
+	}
+	&__item2 {
+		display: flex;
+		flex-direction: column;
+		gap: 70px;
+		justify-content: space-between;
+	}
+	&__menu {
+		display: flex;
+		gap: 65px;
+		ul {
+			display: flex;
+			flex-direction: column;
+			gap: 14px;
+		}
+		li {
+			a {
+				color: $beg-color;
+				position: relative;
+				transition: 0.3s linear;
+				&:hover {
+					color: $orange;
+					&::before {
+						content: '';
+						position: absolute;
+						top: 50%;
+						transform: translateY(-50%);
+						left: -36px;
+						width: 20px;
+						height: 1px;
+						background-color: $beg-color;
+					}
+				}
+			}
+		}
+	}
+	&__social {
+		display: flex;
+		gap: 36px;
+		align-items: center;
+
+		a {
+			transition: 0.3s linear;
+			&:hover {
+				svg circle {
+					fill: $orange;
+				}
+			}
+		}
+	}
+	&__item3 {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		gap: 46px;
+		max-width: 240px;
+	}
+	&__address {
+		color: $beg-color;
+		font-weight: $roman;
+		font-size: 16px;
+		line-height: 100%;
+	}
+	&__phone {
+		color: $beg-color;
+		font-weight: $roman;
+		font-size: 16px;
+		line-height: 100%;
+		transition: 0.3s linear;
+		&:hover {
+			color: $orange;
+		}
+	}
+	&__email {
+		color: $beg-color;
+		font-weight: $roman;
+		font-size: 16px;
+		line-height: 100%;
+		text-decoration: underline;
+		transition: 0.3s linear;
+		&:hover {
+			color: $orange;
+		}
+	}
+}

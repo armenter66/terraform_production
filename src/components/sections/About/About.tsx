@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import image1 from '@/assets/img/image1.jpg';
 import image2 from '@/assets/img/image2.jpg';
-import arrowdia from '@/assets/svg/arrowdia.svg';
+import videobg from '@/assets/img/videobg.webp';
 import styles from './About.module.scss';
 
 export default function About() {
@@ -19,7 +19,9 @@ export default function About() {
 				</div>
 			</div>
 
-			<video
+			<Image src={videobg} alt='videobg' />
+
+			{/* <video
 				className={styles.about__video}
 				autoPlay
 				muted
@@ -28,7 +30,7 @@ export default function About() {
 				poster='../../../assets/img/videobg.webp'
 			>
 				<source src='/video/Terraform_G.mp4' type='video/mp4' />
-			</video>
+			</video> */}
 
 			<div className='container'>
 				<div className={`${styles.about__container} lg:pt-[200px]`}>

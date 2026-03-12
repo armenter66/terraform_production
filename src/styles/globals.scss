@@ -19,6 +19,8 @@ body {
 	font-family: var(--font-helvetica);
 	padding: 0;
 	margin: 0;
+	background-color: $beg_color;
+	overflow-x: hidden !important;
 }
 
 a {
@@ -60,7 +62,6 @@ iframe,
 embed,
 object {
 	display: block;
-	vertical-align: middle;
 }
 
 .font-cormorant {
@@ -74,29 +75,63 @@ object {
 }
 
 .main-btn {
-	padding: 29px 50px 29px 67px;
+	padding: 29px 50px 29px 50px;
 	position: relative;
 	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 14px;
 	border: none;
-	&:hover {
-		svg {
-			fill: $orange;
-		}
-		path {
-			stroke: $orange;
-		}
-	}
-	path {
-		stroke: #231410;
-	}
 	span {
 		font-size: 20px;
-		text-align: center;
 		font-weight: 550;
 		line-height: 90%;
 		color: $brown_main;
-		position: relative;
+
+		display: flex;
+		justify-content: space-between;
+		gap: 14px;
 		z-index: 2;
+	}
+	&:hover {
+		.svg-bg {
+			fill: $orange;
+		}
+		.svg-bg path {
+			stroke: $orange;
+		}
+	}
+	.svg-bg path {
+		stroke: #231410;
+	}
+}
+
+.main-btn-beg {
+	justify-content: center;
+	gap: 15px;
+	align-items: center;
+	span {
+		font-size: 20px;
+		color: $beg_color;
+		display: flex;
+		justify-content: space-between;
+	}
+	.svg-bg path {
+		stroke: $beg_color;
+	}
+	&:hover {
+		.svg-bg {
+			fill: $beg_color;
+		}
+		.svg-bg path {
+			stroke: $beg_color;
+		}
+		span {
+			color: $brown_main;
+		}
+		.svg-arrow {
+			fill: $brown_main;
+		}
 	}
 }
 

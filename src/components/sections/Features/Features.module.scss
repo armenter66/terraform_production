@@ -1,0 +1,28 @@
+@use '@/styles/variables' as *;
+
+.features {
+	background: url('../../../assets/img/suhiibg.webp') center center/cover
+		no-repeat;
+	padding: 176px 0;
+	&__box {
+		background-color: $beg_color;
+		padding: 50px 52px;
+		max-width: 570px;
+		position: relative;
+		margin-left: auto;
+	}
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+		li {
+			display: flex;
+			gap: 40px;
+			align-items: flex-start;
+			font-size: 24px;
+			font-weight: $light300;
+			line-height: 140%;
+			color: $black;
+		}
+	}
+}

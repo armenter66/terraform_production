@@ -28,11 +28,18 @@
 			font-size: 80px;
 		}
 	}
+	a {
+		width: 400px;
+		height: 64px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+	}
 	&__btnImage {
 		position: absolute;
 		display: block;
-		inset: 0;
-		width: 100%;
+		width: 400px;
 		left: 0px;
 		top: 0;
 		height: 100%;
@@ -44,10 +51,8 @@
 		display: block;
 		width: 12px;
 		height: 12px;
-		position: absolute;
-		top: 30px;
-		left: 41px;
 		z-index: 1;
+		fill: $brown_main;
 	}
 	&__video {
 		img {
@@ -63,8 +68,11 @@
 		margin-top: 90px;
 		border-radius: 14px;
 		background-color: $beg_color;
+		@media (max-width: 1600px) {
+			gap: 60px;
+		}
 		p {
-			max-width: 600px;
+			max-width: 545px;
 			font-size: 24px;
 			line-height: 130%;
 			font-weight: 300;
