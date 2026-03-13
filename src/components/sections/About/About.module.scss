@@ -2,9 +2,11 @@
 
 .about {
 	background: $beg_color;
+	padding-bottom: 200px;
 	&__header {
-		background: $pink;
 		ul {
+			padding-top: 72px;
+			padding-bottom: 72px;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
@@ -18,10 +20,28 @@
 		}
 	}
 	&__container {
+		padding-top: 100px;
 		display: flex;
 		justify-content: space-between;
 		gap: 40px;
 		align-items: flex-start;
+		h2 {
+			max-width: 410px;
+			min-width: 410px;
+			font-weight: $medium550;
+			font-size: 72px;
+			line-height: 110%;
+			span {
+				text-align: right;
+				display: block;
+			}
+		}
+		p {
+			max-width: 440px;
+			font-weight: $light300;
+			font-size: 40px;
+			line-height: 110%;
+		}
 	}
 	img {
 		width: 100%;
@@ -75,6 +95,7 @@
 		height: 440px;
 		&_brown {
 			background-color: $brown_main;
+			color: $beg_color;
 			svg {
 				fill: $beg_color;
 			}
@@ -86,6 +107,7 @@
 		}
 	}
 	&__footer {
+		padding-top: 125px;
 		display: flex;
 		gap: 130px;
 		justify-content: space-between;
@@ -163,6 +185,47 @@
 				margin-left: auto;
 				fill: $green;
 			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.about {
+		padding-bottom: 80px;
+		&__header {
+			background-color: $beg_color;
+			ul {
+				padding: 30px 0px;
+				gap: 10px;
+				li {
+					font-size: 8px;
+					color: $brown_main;
+				}
+			}
+		}
+		// img {
+		// 	display: none;
+		// }
+		&__container {
+			padding-top: 50px;
+			flex-direction: column;
+			gap: 50px;
+			h2 {
+				font-size: 42px;
+				max-width: 330px;
+				min-width: 300px;
+			}
+			p {
+				max-width: 330px;
+				font-size: 30px;
+			}
+		}
+		&__box {
+			flex-direction: column;
+		}
+		&__item1 {
+			display: flex;
+			flex-direction: column-reverse;
 		}
 	}
 }

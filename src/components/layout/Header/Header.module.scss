@@ -3,6 +3,8 @@
 .header {
 	position: sticky;
 	z-index: 100;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	top: 0;
 	color: $beg_color;
 	transition:
@@ -13,19 +15,28 @@
 		backdrop-filter: blur(5px);
 	}
 	&__container {
-		// display: flex;
-		// gap: 20px;
-		// justify-content: space-between;
-		// align-items: center;
+		display: flex;
+		gap: 20px;
+		justify-content: space-between;
+		align-items: center;
 	}
 	&__menu {
-		// display: flex;
-		// gap: 60px;
-		// justify-content: center;
-		// align-items: center;
+		display: flex;
+		gap: 60px;
+		justify-content: center;
+		align-items: center;
 		a {
 			color: $beg_color;
 			font-weight: 300;
+		}
+	}
+}
+
+
+@media (max-width: 1024px) {
+	.header {
+		&__menu {
+			display: none;
 		}
 	}
 }

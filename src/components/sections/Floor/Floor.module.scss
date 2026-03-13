@@ -8,6 +8,7 @@
 		font-size: 270px;
 		color: rgba(60, 63, 32, 0.1);
 		max-width: 1155px;
+		text-align: center;
 		margin: 0 auto;
 		z-index: 0;
 		span {
@@ -36,7 +37,7 @@
 	&__img1 {
 		position: absolute;
 		top: 0;
-        right: 0;
+		right: 0;
 		max-width: 470px;
 		border-radius: 32px;
 		z-index: 0;
@@ -103,6 +104,18 @@
 				svg {
 					fill: $beg_color;
 				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	.floor {
+		h2 {
+			font-size: 200px;
+			span {
+				font-size: 190px;
+				margin-top: -60px;
 			}
 		}
 	}

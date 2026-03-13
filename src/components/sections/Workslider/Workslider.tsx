@@ -27,7 +27,9 @@ export default function Workslider() {
 				>
 					<SwiperSlide className={styles.slide}>
 						<div className={`${styles.card} ${styles.cardCutBottomLeft}`}>
-							<h3>Дизайнери та архітектори</h3>
+							<h3>
+								Дизайнери <br /> та архітектори
+							</h3>
 							<p className={styles.p1}>
 								Матеріали під замовлення ускладнюють реалізацію ідей і зривають
 								терміни. 

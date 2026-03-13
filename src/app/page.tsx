@@ -4,7 +4,7 @@ import Master from '@/components/sections/Master/Master';
 import Features from '@/components/sections/Features/Features';
 import Solutions from '@/components/sections/Solutions/Solutions';
 import Wall from '@/components/sections/Wall/Wall';
-import Floor from '@/components/Floor/Floor';
+import Floor from '@/components/sections/Floor/Floor';
 import Benefits from '@/components/sections/Benefits/Benefits';
 import Workslider from '@/components/sections/Workslider/Workslider';
 import Partners from '@/components/sections/Partners/Partners';

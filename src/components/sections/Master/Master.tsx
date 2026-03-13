@@ -32,38 +32,41 @@ export default function Master() {
 							stroke='#231410'
 						/>
 					</svg> */}
-					<div className={`${styles.master__box__header}`}>
-						<h2>
-							Terraform дозволяє <b>спростити</b> цю систему
-						</h2>
-						<div className={`${styles.master__box__header__item}`}>
-							<Image src={num1} width={55} height={55} alt='num1' />
-							<h4>Єдина логістика без розрізнених поставок (і все в наявності)</h4>
-						</div>
-					</div>
+					{/* <div className={`${styles.master__box__header}`}>
+						
+					</div> */}
 					<div className={`${styles.master__box__body}`}>
 						<div className={`${styles.master__box__body__column1}`}>
 							<div className={`${styles.master__box__body__item}`}>
-								<Image src={num4} width={55} height={55} alt='num4' />
+								<h2>
+									Terraform дозволяє <b>спростити</b> цю систему
+								</h2>
+							</div>
+							<div className={`${styles.master__box__body__item}`}>
+								<Image src={num1} width={55} height={55} alt='num4' />
 								<h4>
 									Один склад — матеріал не потрібно шукати по різних постачальниках
 								</h4>
 							</div>
 							<div className={`${styles.master__box__body__item}`}>
-								<Image src={num5} width={55} height={55} alt='num5' />
+								<Image src={num2} width={55} height={55} alt='num5' />
 								<h4>Один майстер замість кількох вузьких спеціалістів</h4>
 							</div>
 						</div>
 
 						<div className={`${styles.master__box__body__column2}`}>
 							<div className={`${styles.master__box__body__item}`}>
-								<Image src={num2} width={55} height={55} alt='num2' />
+								<Image src={num3} width={55} height={55} alt='num1' />
+								<h4>Єдина логістика без розрізнених поставок (і все в наявності)</h4>
+							</div>
+							<div className={`${styles.master__box__body__item}`}>
+								<Image src={num4} width={55} height={55} alt='num2' />
 								<h4>
 									Ідеальна сумісність матеріалів (рівні стики, поєднання і фактури)  
 								</h4>
 							</div>
 							<div className={`${styles.master__box__body__item}`}>
-								<Image src={num3} width={55} height={55} alt='num3' />
+								<Image src={num5} width={55} height={55} alt='num3' />
 								<h4>Узгоджені дедлайни без накладання етапів робіт</h4>
 							</div>
 						</div>
@@ -80,7 +83,9 @@ export default function Master() {
 							Його обирають за стабільність, вологостійкість і прогнозований результат
 							у щоденній експлуатації.
 						</span>
-						<h5>Перевірена технологія Нові можливості для дизайну</h5>
+						<h5>
+							Перевірена технологія <br /> Нові можливості для дизайну
+						</h5>
 					</div>
 				</div>
 			</div>

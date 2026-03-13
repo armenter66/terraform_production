@@ -100,3 +100,15 @@
 		}
 	}
 }
+
+@media (max-width: 1400px) {
+	.wall {
+		h2 {
+			font-size: 200px;
+			span {
+				font-size: 190px;
+				margin-top: -60px;
+			}
+		}
+	}
+}

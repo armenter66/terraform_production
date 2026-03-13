@@ -30,7 +30,7 @@
 	&__list {
 		display: flex;
 		flex-direction: column;
-		gap: 40px;
+		gap: 18px;
 		li {
 			display: flex;
 			align-items: start;
@@ -51,7 +51,7 @@
 		background-color: $brown_main;
 		border-radius: 32px;
 		padding: 46px 88px;
-		height: 220px;
+		height: 230px;
 		&__text {
 			display: flex;
 			gap: 24px;
@@ -95,7 +95,7 @@
 	&__item2 {
 		display: flex;
 		flex-direction: column;
-		gap: 60px;
+		gap: 50px;
 	}
 	&__desc {
 		max-width: 400px;
@@ -110,7 +110,7 @@
 			color: $brown_main;
 		}
 		p {
-			padding-top: 32px;
+			padding-top: 22px;
 			color: $brown_main;
 			font-size: 18px;
 			line-height: 140%;
@@ -208,5 +208,13 @@
 		opacity: 1;
 		transform: translateX(0);
 		transition-delay: 1.4s;
+	}
+}
+
+@media (max-width: 1400px) {
+	.partners {
+		&__footer {
+			gap: 100px;
+		}
 	}
 }

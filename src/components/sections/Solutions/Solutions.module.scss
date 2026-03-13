@@ -45,11 +45,14 @@
 		font-weight: $light300;
 		padding: 50px 95px;
 		line-height: 140%;
-		background: url('../../../assets/svg/animsolbg.svg') center center/cover
-			no-repeat;
+		border-radius: 32px;
+		border: 1px solid $brown_light;
+		background-color: $beg_color;
+		// background: url('../../../assets/svg/animsolbg.svg') center center/cover
+		// 	no-repeat;
 		&.darkCard {
-			background: url('../../../assets/svg/animsolbg-brown.svg') center
-				center/cover no-repeat;
+			border: 1px solid $brown_main;
+			background-color: $brown_main;
 			color: $beg_color;
 		}
 

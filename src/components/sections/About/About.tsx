@@ -1,15 +1,15 @@
 import Image from 'next/image';
-import image1 from '@/assets/img/image1.jpg';
-import image2 from '@/assets/img/image2.jpg';
-import videobg from '@/assets/img/videobg.webp';
+import image1 from '@/assets/img/image1.webp';
+import image2 from '@/assets/img/image2.webp';
+// import videobg from '@/assets/img/videobg.webp';
 import styles from './About.module.scss';
 
 export default function About() {
 	return (
-		<section id='about' className={`lg:pb-[200px] ${styles.about}`}>
+		<section id='about' className={`${styles.about}`}>
 			<div className={styles.about__header}>
 				<div className='container'>
-					<ul className='lg:pt-[72px] pb-[72px]'>
+					<ul>
 						<li>Завжди в наявності</li>
 						<li>Європейська якість</li>
 						<li>Сухий монтаж</li>
@@ -19,7 +19,7 @@ export default function About() {
 				</div>
 			</div>
 
-			<Image src={videobg} alt='videobg' />
+			{/* <Image src={videobg} alt='videobg' /> */}
 
 			{/* <video
 				className={styles.about__video}
@@ -33,12 +33,12 @@ export default function About() {
 			</video> */}
 
 			<div className='container'>
-				<div className={`${styles.about__container} lg:pt-[200px]`}>
-					<h2 className='max-w-[410px] min-w-[410px] font-[550] lg:text-[72px] leading-[110%]'>
-						Знайдіть <span className={`block text-right`}>різницю</span>
+				<div className={`${styles.about__container}`}>
+					<h2>
+						Знайдіть <span>різницю</span>
 					</h2>
-					<p className='max-w-[440px] font-light lg:text-[40px] leading-[110%]'>
-						Візуально <b> — преміум.</b> Раціонально <b> — до 45% вигідніше.</b>
+					<p>
+						Візуально <b> — преміум</b> Раціонально <b> — до 45% вигідніше</b>
 					</p>
 				</div>
 			</div>
@@ -53,7 +53,7 @@ export default function About() {
 						className={styles.about__image}
 					/>
 					<div
-						className={`${styles.about__item__block} ${styles.about__item__block_brown} bg-[#231410] text-[#fff6e5]`}
+						className={`${styles.about__item__block} ${styles.about__item__block_brown}`}
 					>
 						<div className={styles.about__item__title}>
 							<svg
@@ -95,7 +95,7 @@ export default function About() {
 							Terraform — преміальна естетика з раціональнішою вартістю
 						</div>
 						<p>
-							Terraform працює<b> інакше </b>. Один матеріал бере на себе роль кількох,
+							Terraform працює<b> інакше</b>. Один матеріал бере на себе роль кількох,
 							зберігаючи візуальний рівень простору та дозволяючи оптимізувати бюджет
 							<b> до 45%</b>
 						</p>
@@ -104,7 +104,7 @@ export default function About() {
 			</div>
 
 			<div className='container'>
-				<div className={`${styles.about__footer} pt-[125px]`}>
+				<div className={`${styles.about__footer}`}>
 					<div className={styles.about__footer__desc}>
 						Обидва інтер’єри виглядають однаково переконливо: чисті лінії, глибокі
 						фактури, цілісний дизайн. Різниця — не у сприйнятті, а в підході до

@@ -19,19 +19,13 @@ export default function Header() {
 	}, []);
 
 	return (
-		<header
-			className={`${styles.header} ${scrolled ? styles.scrolled : ''} pt-[20px] pb-[20px]`}
-		>
+		<header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
 			<div className='container'>
-				<div
-					className={`${styles.header__container} flex gap-[20px] justify-between items-center`}
-				>
+				<div className={`${styles.header__container}`}>
 					<Link href='/'>
 						<Image src={logo} alt='logo' width={150} height={39} />
 					</Link>
-					<nav
-						className={`${styles.header__menu} flex gap-[60px] justify-center items-center`}
-					>
+					<nav className={`${styles.header__menu}`}>
 						<Link href='/about'> Terraform Стіни </Link>
 						<Link href='/catalog'> Terraform Підлога </Link>
 						<Link href='/contact'> Партнери </Link>

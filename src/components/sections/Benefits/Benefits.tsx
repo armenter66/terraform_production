@@ -22,7 +22,9 @@ export default function Benefits() {
 					<div className={styles.benefits__wrapper}>
 						<div className={styles.benefits__wrapper__row}>
 							<div className={styles.benefits__wrapper__item}>
-								<h4>У наявності на складі в Хмельницькому</h4>
+								<h4>
+									У наявності на складі <br />в Хмельницькому
+								</h4>
 								<p>
 									Жодних тижнів очікування — матеріал готовий до реалізації проєкту тоді,
 									коли це потрібно вам

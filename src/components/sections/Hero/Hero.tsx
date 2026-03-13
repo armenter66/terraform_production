@@ -6,13 +6,13 @@ import styles from './Hero.module.scss';
 export default function Hero() {
 	const { openModal } = useModal();
 	return (
-		<section className={`${styles.hero} mt-[-80px]`}>
+		<section className={`${styles.hero}`}>
 			<div className='container'>
 				<div className={styles.hero__main}>
 					<h1>
 						Cтінові <span className={`${styles.hero__accent}`}>панелі</span>
-						<span className={`block lg: pl-[10px]`}>та підлогове</span>
-						<span className={`${styles.hero__accent} lg: pl-[180px]`}>покриття</span>
+						<span>та підлогове</span>
+						<span className={`${styles.hero__accent}`}>покриття</span>
 					</h1>
 				</div>
 

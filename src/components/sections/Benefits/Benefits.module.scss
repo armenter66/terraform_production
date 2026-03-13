@@ -26,7 +26,7 @@
 		display: block;
 		border: 1px solid $brown_main;
 		border-radius: 14px;
-		max-width: 470px;
+		max-width: 370px;
 		width: 100%;
 		position: relative;
 		transition: 0.2s linear;
@@ -68,10 +68,11 @@
 		gap: 72px;
 		&__row {
 			display: flex;
-			gap: 80px;
+			gap: 50px;
 		}
 		&__item {
 			max-width: 350px;
+			width: 350px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;

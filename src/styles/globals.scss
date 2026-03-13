@@ -135,8 +135,24 @@ object {
 	}
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 1400px) {
 	.container {
-		max-width: 900px;
+		padding: 0 80px;
+	}
+}
+
+@media (max-width: 1024px) {
+	html {
+		overflow-x: hidden;
+	}
+	.container {
+		max-width: 800px;
+		padding: 0 30px;
+	}
+	.main-btn {
+		padding: 20px 20px 20px 20px;
+		span {
+			font-size: 14px;
+		}
 	}
 }
