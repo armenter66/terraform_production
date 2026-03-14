@@ -22,9 +22,9 @@
 	padding-left: 135px;
 	position: relative;
 
-	@media (max-width: 1240px) {
-		padding-left: 20px;
-	}
+	// @media (max-width: 1240px) {
+	// 	padding-left: 20px;
+	// }
 }
 
 .swiperContainer {
@@ -108,6 +108,57 @@
 			}
 			path:nth-child(2) {
 				fill: $brown_main;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.workslider {
+		padding: 50px 0 50px 0;
+		h2 {
+			font-size: 36px;
+			line-height: 110%;
+		}
+		.sliderWrapper {
+			margin-top: 40px;
+			padding-left: 30px;
+			padding-right: 30px;
+		}
+		.swiperContainer {
+			overflow: hidden;
+		}
+		.navContainer {
+			left: 53px;
+		}
+		.navBtn {
+			width: 50px;
+			height: 50px;
+			svg {
+				width: 50px;
+			}
+		}
+		.slide {
+			width: 100%;
+			max-width: 100%;
+			height: 255px;
+			background: url('../../../assets/svg/slidebgmob.svg') center center/cover
+				no-repeat;
+		}
+		.card {
+			padding: 30px;
+			width: 100%;
+			height: 255px;
+			h3 {
+				font-size: 24px;
+			}
+			.p1 {
+				margin-top: 16px;
+				font-size: 14px;
+			}
+			.p2 {
+				padding-top: 16px;
+				font-size: 14px;
 			}
 		}
 	}

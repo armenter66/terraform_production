@@ -3,10 +3,14 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import logo from '../../../assets/svg/logo.svg';
+import logoDark from '../../../assets/svg/logodark.svg';
 import styles from './Header.module.scss';
+import hamb from '@/assets/svg/hamburger.svg';
+import close from '@/assets/svg/close.svg';
 
 export default function Header() {
 	const [scrolled, setScrolled] = useState(false);
+	const [menuOpen, setMenuOpen] = useState(false);
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -18,6 +22,16 @@ export default function Header() {
 		return () => window.removeEventListener('scroll', handleScroll);
 	}, []);
 
+	useEffect(() => {
+		if (menuOpen) {
+			document.body.style.overflow = 'hidden';
+			document.documentElement.style.overflow = 'hidden';
+		} else {
+			document.body.style.overflow = '';
+			document.documentElement.style.overflow = '';
+		}
+	}, [menuOpen]);
+
 	return (
 		<header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
 			<div className='container'>
@@ -25,12 +39,109 @@ export default function Header() {
 					<Link href='/'>
 						<Image src={logo} alt='logo' width={150} height={39} />
 					</Link>
+					{!menuOpen && (
+						<button className={styles.burger} onClick={() => setMenuOpen(true)}>
+							<Image src={hamb} alt='menu' width={40} height={40} />
+						</button>
+					)}
 					<nav className={`${styles.header__menu}`}>
 						<Link href='/about'> Terraform Стіни </Link>
 						<Link href='/catalog'> Terraform Підлога </Link>
 						<Link href='/contact'> Партнери </Link>
 						<Link href='/contact'> Контакти </Link>
 					</nav>
+					<div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ''}`}>
+						<Link href='/'>
+							<Image src={logoDark} alt='logo' width={150} height={39} />
+						</Link>
+						<button className={styles.closeBtn} onClick={() => setMenuOpen(false)}>
+							<Image src={close} alt='close menu' width={40} height={40} />
+						</button>
+						<nav>
+							<Link href='/about' onClick={() => setMenuOpen(false)}>
+								Terraform Стіни
+							</Link>
+							<Link href='/catalog' onClick={() => setMenuOpen(false)}>
+								Terraform Підлога
+							</Link>
+							<Link href='/partners' onClick={() => setMenuOpen(false)}>
+								Партнери
+							</Link>
+							<Link href='/contact' onClick={() => setMenuOpen(false)}>
+								Контакти
+							</Link>
+						</nav>
+						<ul className={`${styles.header__social}`}>
+							<li>
+								<a href='https://www.instagram.com/terraform_ua/'>
+									<svg
+										width='40'
+										height='40'
+										viewBox='0 0 40 40'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<circle cx='20' cy='20' r='20' fill='#FFF6E5' />
+										<path
+											d='M23.4939 11.0566C24.7627 11.0566 25.9795 11.5607 26.8767 12.4578C27.7739 13.355 28.2779 14.5718 28.2779 15.8406V23.4949C28.2779 24.7637 27.7739 25.9805 26.8767 26.8777C25.9795 27.7748 24.7627 28.2789 23.4939 28.2789H15.8396C14.5708 28.2789 13.354 27.7748 12.4569 26.8777C11.5597 25.9805 11.0557 24.7637 11.0557 23.4949V15.8406C11.0557 14.5718 11.5597 13.355 12.4569 12.4578C13.354 11.5607 14.5708 11.0566 15.8396 11.0566H23.4939ZM19.6668 15.8406C18.6517 15.8406 17.6783 16.2438 16.9606 16.9615C16.2428 17.6793 15.8396 18.6527 15.8396 19.6678C15.8396 20.6828 16.2428 21.6562 16.9606 22.374C17.6783 23.0917 18.6517 23.4949 19.6668 23.4949C20.6818 23.4949 21.6553 23.0917 22.373 22.374C23.0907 21.6562 23.4939 20.6828 23.4939 19.6678C23.4939 18.6527 23.0907 17.6793 22.373 16.9615C21.6553 16.2438 20.6818 15.8406 19.6668 15.8406ZM19.6668 17.7542C20.1743 17.7542 20.661 17.9558 21.0199 18.3146C21.3787 18.6735 21.5804 19.1602 21.5804 19.6678C21.5804 20.1753 21.3787 20.662 21.0199 21.0209C20.661 21.3797 20.1743 21.5813 19.6668 21.5813C19.1593 21.5813 18.6725 21.3797 18.3137 21.0209C17.9548 20.662 17.7532 20.1753 17.7532 19.6678C17.7532 19.1602 17.9548 18.6735 18.3137 18.3146C18.6725 17.9558 19.1593 17.7542 19.6668 17.7542ZM23.9723 14.4054C23.7186 14.4054 23.4752 14.5062 23.2958 14.6856C23.1163 14.8651 23.0155 15.1084 23.0155 15.3622C23.0155 15.616 23.1163 15.8593 23.2958 16.0387C23.4752 16.2182 23.7186 16.319 23.9723 16.319C24.2261 16.319 24.4695 16.2182 24.6489 16.0387C24.8283 15.8593 24.9291 15.616 24.9291 15.3622C24.9291 15.1084 24.8283 14.8651 24.6489 14.6856C24.4695 14.5062 24.2261 14.4054 23.9723 14.4054Z'
+											fill='#231410'
+										/>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href='https://www.facebook.com/terraform.ukraine'>
+									<svg
+										width='40'
+										height='40'
+										viewBox='0 0 40 40'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<circle cx='20' cy='20' r='20' fill='#FFF6E5' />
+										<path
+											d='M21.6663 21.2493H23.7497L24.583 17.916H21.6663V16.2493C21.6663 15.391 21.6663 14.5827 23.333 14.5827H24.583V11.7827C24.3113 11.7468 23.2855 11.666 22.2022 11.666C19.9397 11.666 18.333 13.0468 18.333 15.5827V17.916H15.833V21.2493H18.333V28.3327H21.6663V21.2493Z'
+											fill='#231410'
+										/>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href='#'>
+									<svg
+										width='40'
+										height='40'
+										viewBox='0 0 40 40'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<circle cx='20' cy='20' r='20' fill='#FFF6E5' />
+										<path
+											d='M23.8332 14.85C23.2637 14.1996 22.9498 13.3645 22.9499 12.5H20.3749V22.8333C20.3554 23.3927 20.1195 23.9226 19.7168 24.3112C19.3141 24.6999 18.7762 24.917 18.2166 24.9167C17.0332 24.9167 16.0499 23.95 16.0499 22.75C16.0499 21.3167 17.4332 20.2417 18.8582 20.6833V18.05C15.9832 17.6667 13.4666 19.9 13.4666 22.75C13.4666 25.525 15.7666 27.5 18.2082 27.5C20.8249 27.5 22.9499 25.375 22.9499 22.75V17.5083C23.9941 18.2582 25.2477 18.6605 26.5332 18.6583V16.0833C26.5332 16.0833 24.9666 16.1583 23.8332 14.85Z'
+											fill='#231410'
+										/>
+									</svg>
+								</a>
+							</li>
+							<li>
+								<a href='#'>
+									<svg
+										width='40'
+										height='40'
+										viewBox='0 0 40 40'
+										fill='none'
+										xmlns='http://www.w3.org/2000/svg'
+									>
+										<circle cx='20' cy='20' r='20' fill='#FFF6E5' />
+										<path
+											d='M28.783 15.3507C28.6789 14.9609 28.4745 14.6052 28.1901 14.3191C27.9057 14.0329 27.5513 13.8263 27.1622 13.7198C25.733 13.334 19.9997 13.334 19.9997 13.334C19.9997 13.334 14.2663 13.334 12.8372 13.7198C12.4481 13.8263 12.0936 14.0329 11.8093 14.3191C11.5249 14.6052 11.3204 14.9609 11.2163 15.3507C10.833 16.7907 10.833 19.7923 10.833 19.7923C10.833 19.7923 10.833 22.794 11.2163 24.234C11.3203 24.6239 11.5247 24.9798 11.8091 25.2661C12.0935 25.5523 12.448 25.7591 12.8372 25.8657C14.2672 26.2507 19.9997 26.2507 19.9997 26.2507C19.9997 26.2507 25.733 26.2507 27.1622 25.8657C27.5514 25.7591 27.9059 25.5523 28.1903 25.2661C28.4747 24.9798 28.679 24.6239 28.783 24.234C29.1663 22.7957 29.1663 19.7923 29.1663 19.7923C29.1663 19.7923 29.1663 16.7907 28.783 15.3507ZM18.1247 17.0665V22.5182L22.9163 19.7923L18.1247 17.0665Z'
+											fill='#231410'
+										/>
+									</svg>
+								</a>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</header>

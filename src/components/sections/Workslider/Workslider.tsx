@@ -19,6 +19,11 @@ export default function Workslider() {
 					modules={[Navigation]}
 					spaceBetween={30}
 					slidesPerView={2}
+					breakpoints={{
+						320: { slidesPerView: 1 },
+						768: { slidesPerView: 1 },
+						1024: { slidesPerView: 1 },
+					}}
 					navigation={{
 						prevEl: '#work-prev',
 						nextEl: '#work-next',

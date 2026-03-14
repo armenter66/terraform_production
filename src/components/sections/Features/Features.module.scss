@@ -26,3 +26,26 @@
 		}
 	}
 }
+
+@media (max-width: 1024px) {
+	.features {
+		background: url('../../../assets/img/suhiibgmob.webp') center center/cover
+			no-repeat;
+		padding: 0;
+		padding-top: 235px;
+		&__box {
+			padding: 24px 35px 50px 35px;
+		}
+		&__list {
+			gap: 24px;
+			li {
+				gap: 24px;
+				font-size: 14px;
+				span {
+					font-size: 16px;
+					line-height: 150%;
+				}
+			}
+		}
+	}
+}

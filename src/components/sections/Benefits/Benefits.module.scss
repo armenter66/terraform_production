@@ -73,19 +73,65 @@
 		&__item {
 			max-width: 350px;
 			width: 350px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
 			h4 {
 				font-size: 32px;
 				font-weight: $roman;
-                line-height: 110%;
+				line-height: 110%;
 			}
-            p {
-                padding-top: 32px;
-                font-size: 18px;
-                font-weight: $light300;
-            }
+			p {
+				padding-top: 32px;
+				font-size: 18px;
+				font-weight: $light300;
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.benefits {
+		padding: 100px 0 90px 0;
+		h2 {
+			font-size: 36px;
+			text-align: center;
+			span {
+				padding-left: 0;
+			}
+			img {
+				max-width: 140px;
+				top: -80px;
+				right: -60px;
+			}
+		}
+		&__container {
+			gap: 50px;
+			margin-top: 72px;
+			flex-direction: column;
+		}
+		&__wrapper {
+			gap: 50px;
+			&__row {
+				flex-direction: column;
+			}
+			&__item {
+				h4 {
+					font-size: 24px;
+				}
+				p {
+					padding-top: 24px;
+					font-size: 16px;
+				}
+			}
+		}
+		a {
+			padding: 18px;
+			font-size: 18px;
+			svg {
+				margin-top: 5px;
+				width: 14px;
+			}
 		}
 	}
 }

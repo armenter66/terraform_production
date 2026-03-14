@@ -8,7 +8,7 @@ import num5 from '@/assets/svg/05.svg';
 
 export default function Master() {
 	return (
-		<section className={`${styles.master} pb-[100px]`}>
+		<section className={`${styles.master}`}>
 			<div className='container'>
 				<div className={styles.master__container}>
 					<h2>

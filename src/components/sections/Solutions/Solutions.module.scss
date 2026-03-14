@@ -64,3 +64,20 @@
 		}
 	}
 }
+
+@media (max-width: 1024px) {
+	.solutions {
+		padding: 80px 0;
+		&__container {
+			flex-direction: column;
+		}
+		&__title {
+			font-size: 38px;
+		}
+		&__card {
+			font-size: 16px;
+			padding: 35px;
+			height: 220px;
+		}
+	}
+}

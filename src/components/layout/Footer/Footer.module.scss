@@ -43,6 +43,9 @@
 				color: $beg-color;
 				position: relative;
 				transition: 0.3s linear;
+				font-size: 18px;
+				font-weight: $roman;
+				line-height: 100%;
 				&:hover {
 					color: $orange;
 					&::before {
@@ -72,6 +75,9 @@
 				}
 			}
 		}
+	}
+	&__social2 {
+		display: none;
 	}
 	&__item3 {
 		display: flex;
@@ -105,6 +111,52 @@
 		transition: 0.3s linear;
 		&:hover {
 			color: $orange;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.footer {
+		padding: 80px 0;
+		&__container {
+			flex-direction: column;
+			align-items: center;
+			gap: 60px;
+		}
+		&__item1 {
+			align-items: center;
+			gap: 32px;
+			p {
+				text-align: center;
+				font-size: 20px;
+			}
+		}
+		&__item2 {
+			gap: 50px;
+		}
+		&__menu {
+			flex-direction: column;
+			gap: 38px;
+			align-items: center;
+			ul {
+				align-items: center;
+				gap: 38px;
+			}
+		}
+		&__item3 {
+			gap: 24px;
+			align-items: center;
+			text-align: center;
+		}
+		&__social {
+			gap: 30px;
+		}
+		&__social1 {
+			display: none;
+		}
+		&__social2 {
+			margin-top: 30px;
+			display: flex;
 		}
 	}
 }

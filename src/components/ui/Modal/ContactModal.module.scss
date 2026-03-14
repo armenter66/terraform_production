@@ -43,6 +43,7 @@
 		font-weight: $light300;
 		font-size: 16px;
 		line-height: 140%;
+		text-align: center;
 	}
 }
 
@@ -143,6 +144,7 @@
 		background: none;
 		width: 100%;
 		outline: none;
+		padding-bottom: 20px;
 		border-bottom: 1px solid rgba(35, 20, 16, 0.2);
 
 		color: $brown_main;
@@ -154,6 +156,63 @@
 			line-height: 130%;
 			font-size: 20px;
 			font-weight: $light300;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.modal {
+		width: 90vw;
+		padding: 40px 20px;
+		h2 {
+			font-size: 30px;
+		}
+		p {
+			padding-top: 16px;
+			font-size: 16px;
+		}
+		hr {
+			margin-top: 16px;
+		}
+		span {
+			font-size: 14px;
+		}
+	}
+	.close {
+		svg {
+			width: 40px;
+		}
+	}
+	.form {
+		margin-top: 40px;
+		gap: 20px;
+		&__flex {
+			gap: 20px;
+			flex-direction: column;
+		}
+		input {
+			font-size: 16px;
+			padding-bottom: 10px;
+			&::placeholder {
+				font-size: 14px;
+			}
+		}
+		textarea {
+			font-size: 16px;
+			padding-bottom: 10px;
+			&::placeholder {
+				font-size: 14px;
+			}
+		}
+	}
+	.btn {
+		margin-top: 30px;
+		height: 45px;
+		span {
+			svg {
+				width: 10px;
+				height: 10px;
+			}
 		}
 	}
 }
