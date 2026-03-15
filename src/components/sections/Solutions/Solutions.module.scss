@@ -73,11 +73,18 @@
 		}
 		&__title {
 			font-size: 38px;
+			position: relative;
 		}
 		&__card {
 			font-size: 16px;
 			padding: 35px;
 			height: 220px;
+		}
+		&__leftSide {
+			position: static;
+		}
+		&__rightSide {
+			gap: 100px;
 		}
 	}
 }

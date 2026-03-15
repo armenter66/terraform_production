@@ -2,11 +2,51 @@
 
 import { useModal } from '@/context/ModalContext';
 import styles from './ContactModal.module.scss';
+import { useForm, Controller } from 'react-hook-form';
+import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { IMaskInput } from 'react-imask';
+import { useRouter } from 'next/navigation';
+
+const schema = z.object({
+	name: z.string().min(2, 'Введіть імʼя'),
+	phone: z.string().min(10, 'Некоректний телефон'),
+	email: z.string().email('Некоректний email'),
+	message: z.string().optional(),
+});
+
+type FormData = z.infer<typeof schema>;
 
 export default function ContactModal() {
 	const { isOpen, closeModal } = useModal();
 
+	const router = useRouter();
+
+	const {
+		register,
+		handleSubmit,
+		control,
+		formState: { errors, isSubmitting },
+	} = useForm<FormData>({
+		resolver: zodResolver(schema),
+	});
+
 	if (!isOpen) return null;
+
+	const onSubmit = async (data: FormData) => {
+		const res = await fetch('/api/contact', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: JSON.stringify(data),
+		});
+
+		if (res.ok) {
+			closeModal();
+			router.push('/thank-you');
+		}
+	};
 
 	return (
 		<div className={styles.overlay} onClick={closeModal}>
@@ -48,15 +88,36 @@ export default function ContactModal() {
 					швидко.{' '}
 				</span>
 
-				<form className={styles.form}>
-					<input type='text' placeholder='Імʼя' />
+				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
+					<input type='text' placeholder='Імʼя' {...register('name')} />
+
+					{errors.name && <p>{errors.name.message}</p>}
 					<div className={styles.form__flex}>
-						<input type='tel' placeholder='+380' />
-						<input type='email' placeholder='Email' />
+						<Controller
+							name='phone'
+							control={control}
+							render={({ field }) => (
+								<IMaskInput
+									mask="+{380} 00 000 00 00"
+									value={field.value || ''}
+									onAccept={(value: any) => field.onChange(value)}
+									onBlur={field.onBlur}
+									placeholder='+380'
+									className={styles.input}
+								/>
+							)}
+						/>
+						{errors.phone && <p>{errors.phone.message}</p>}
+
+						{errors.phone && <p>{errors.phone.message}</p>}
+						<input type='email' placeholder='Email' {...register('email')} />
+
+						{errors.email && <p>{errors.email.message}</p>}
 					</div>
 					<textarea
-						name='textfield'
+						// name='textfield'
 						placeholder='Сфера діяльності (дизайнер / магазин / прораб / HoReCa / інше)'
+						{...register('message')}
 					/>
 
 					<button type='submit' className={`${styles.btn}`}>

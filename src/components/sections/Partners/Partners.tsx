@@ -59,7 +59,7 @@ export default function Partners() {
 					</ul>
 
 					<div className={styles.partners__box}>
-						<a href='#' className='main-btn main-btn-beg' onClick={openModal}>
+						<button className='main-btn main-btn-beg' onClick={openModal}>
 							<svg
 								className={`${styles.partners__btnImage} svg-bg`}
 								width='400'
@@ -80,7 +80,7 @@ export default function Partners() {
 							</svg>
 
 							<span>Стати партнером</span>
-						</a>
+						</button>
 						<div className={styles.partners__box__text}>
 							<span>* </span> Ми одразу зв’яжемось з вами і пояснимо формат стенду,
 							логістику та умови
