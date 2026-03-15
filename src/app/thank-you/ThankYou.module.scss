@@ -1,0 +1,211 @@
+@use '@/styles/variables' as *;
+
+.hero {
+	padding: 110px 0 80px 0;
+	&__btnImage {
+		position: absolute;
+		display: block;
+		width: 400px;
+		left: 0px;
+		top: 0;
+		height: 100%;
+		z-index: 0;
+		fill: $beg_color;
+		transition: 0.2s linear;
+	}
+	&__arrowdia {
+		display: block;
+		width: 12px;
+		height: 12px;
+		z-index: 1;
+		fill: $brown_main;
+	}
+	a {
+		width: 400px;
+		height: 64px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+
+		padding: 29px 50px 29px 50px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 14px;
+		border: none;
+		span {
+			font-size: 20px;
+			font-weight: 550;
+			line-height: 90%;
+			color: $brown_main;
+
+			display: flex;
+			justify-content: space-between;
+			gap: 14px;
+			z-index: 2;
+		}
+		&:hover {
+			.svg-bg {
+				fill: $orange;
+			}
+			.svg-bg path {
+				stroke: $orange;
+			}
+		}
+		.svg-bg {
+			stroke: #231410;
+		}
+	}
+}
+.heroWrapper {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 40px;
+	@media (max-width: 992px) {
+		flex-direction: column;
+	}
+}
+
+.title {
+	font-size: 100px;
+	font-weight: 300;
+	line-height: 90%;
+	color: $brown-main;
+	max-width: 600px;
+	margin: 0;
+	span {
+		font-size: 120px;
+		line-height: 50%;
+		display: block;
+	}
+	@media (max-width: 1200px) {
+		font-size: 64px;
+		span {
+			font-size: 84px;
+		}
+	}
+	@media (max-width: 768px) {
+		font-size: 42px;
+		span {
+			font-size: 64px;
+		}
+	}
+}
+
+.rightCol {
+	@media (max-width: 992px) {
+		flex: 1;
+		padding-top: 0;
+	}
+}
+
+.subtitle {
+	font-size: 24px;
+	line-height: 130%;
+	color: $brown-main;
+	font-weight: 300;
+	margin-bottom: 70px;
+}
+
+/* Кнопка Завантажити (Звичайна з рамкою) */
+
+.bannerSection {
+	padding-top: 40px;
+}
+
+.bannerWrapper {
+	position: relative; /* ВАЖЛИВО для плашки */
+	width: 100%;
+	height: 400px; /* Висота банера */
+	overflow: hidden;
+
+	@media (max-width: 768px) {
+		height: 500px;
+	}
+}
+
+.imageBox {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	.img {
+		object-fit: cover;
+	}
+}
+
+/* Плашка поверх фото */
+.contactCard {
+	position: absolute;
+	top: 90px;
+	left: 60px;
+	background-color: $beg-color; /* Кремовий фон */
+	padding: 40px;
+	border-radius: 14px;
+	z-index: 2;
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+
+	p {
+		font-size: 24px;
+		line-height: $light300;
+		text-align: center;
+		color: $brown-main;
+		margin-bottom: 24px;
+		line-height: 130%;
+	}
+
+	@media (max-width: 768px) {
+		left: 20px;
+		right: 20px;
+		bottom: 20px;
+		padding: 30px 20px;
+	}
+}
+
+/* Помаранчева кнопка (ЗІ ЗРІЗАНИМИ КУТАМИ) */
+.phoneBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 12px;
+	background-color: $orange; /* Гірчично-помаранчевий */
+	color: $brown-main;
+	font-size: 20px;
+	font-weight: 550;
+	text-decoration: none;
+	padding: 20px 40px;
+	width: 100%; /* Розтягуємо на всю ширину плашки */
+
+	/* Робимо всі кути спочатку заокругленими */
+	border-radius: 12px;
+
+	/* ВАЖЛИВО: Відрізаємо Лівий-Верхній та Правий-Нижній кути */
+	clip-path: polygon(
+		20px 0,
+		100% 0,
+		100% calc(100% - 20px),
+		calc(100% - 20px) 100%,
+		0 100%,
+		0 20px
+	);
+
+	transition:
+		opacity 0.3s,
+		transform 0.1s;
+
+	&:hover {
+		opacity: 0.9;
+	}
+	&:active {
+		transform: scale(0.98);
+	}
+
+	.phoneIcon {
+		display: flex;
+		align-items: center;
+	}
+}

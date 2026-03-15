@@ -10,7 +10,9 @@ import { useRouter } from 'next/navigation';
 
 const schema = z.object({
 	name: z.string().min(2, 'Введіть імʼя'),
-	phone: z.string().min(10, 'Некоректний телефон'),
+	phone: z
+		.string()
+		.regex(/^\+380\d{9}$/, 'Телефон має бути у форматі +380XXXXXXXXX'),
 	email: z.string().email('Некоректний email'),
 	message: z.string().optional(),
 });
@@ -29,6 +31,9 @@ export default function ContactModal() {
 		formState: { errors, isSubmitting },
 	} = useForm<FormData>({
 		resolver: zodResolver(schema),
+		defaultValues: {
+			phone: '+380',
+		},
 	});
 
 	if (!isOpen) return null;
@@ -98,17 +103,17 @@ export default function ContactModal() {
 							control={control}
 							render={({ field }) => (
 								<IMaskInput
-									mask="+{380} 00 000 00 00"
-									value={field.value || ''}
-									onAccept={(value: any) => field.onChange(value)}
+									mask='+{380} 00 000 00 00'
+									value={field.value || '+380'}
+									onAccept={(value: any) =>
+										field.onChange(String(value).replace(/\s/g, ''))
+									}
 									onBlur={field.onBlur}
 									placeholder='+380'
 									className={styles.input}
 								/>
 							)}
 						/>
-						{errors.phone && <p>{errors.phone.message}</p>}
-
 						{errors.phone && <p>{errors.phone.message}</p>}
 						<input type='email' placeholder='Email' {...register('email')} />
 
@@ -145,7 +150,7 @@ export default function ContactModal() {
 							>
 								<path d='M2.19559 3.79275V8.25189L10.126 0.321525C10.3318 0.115651 10.6111 -4.39784e-06 10.9022 1.25424e-10C11.1934 4.39809e-06 11.4726 0.115669 11.6785 0.321548C11.8843 0.527427 12 0.806657 12 1.09781C12 1.38896 11.8843 1.66819 11.6785 1.87406L3.74808 9.80443H8.20725C8.4984 9.80443 8.77763 9.92009 8.9835 10.126C9.18938 10.3318 9.30504 10.6111 9.30504 10.9022C9.30504 11.1934 9.18938 11.4726 8.9835 11.6785C8.77763 11.8843 8.4984 12 8.20725 12H1.5183C0.516786 11.9816 0 11.335 0 10.4846V3.79277C0.00134087 3.5025 0.117592 3.22457 0.323323 3.01979C0.529055 2.815 0.807518 2.70004 1.0978 2.70004C1.38807 2.70004 1.66654 2.815 1.87227 3.01979C2.078 3.22457 2.19425 3.50247 2.19559 3.79275Z' />
 							</svg>
-							Завантажити каталог з цінами
+							{isSubmitting ? 'Відправка...' : 'Завантажити каталог з цінами'}
 						</span>
 					</button>
 				</form>
