@@ -43,9 +43,7 @@ export default function Solutions() {
 							<div
 								key={card.id}
 								className={`${styles.solutions__card} ${card.isDark ? styles.darkCard : ''}`}
-								style={{
-									top: `calc(15vh + ${index * 45}px)`,
-								}}
+								style={{ '--index': index } as React.CSSProperties}
 							>
 								<p>{card.text}</p>
 							</div>

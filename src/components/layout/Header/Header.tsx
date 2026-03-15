@@ -1,17 +1,20 @@
 'use client';
 import Link from 'next/link';
 import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import logo from '../../../assets/svg/logo.svg';
 import logoDark from '../../../assets/svg/logodark.svg';
 import styles from './Header.module.scss';
 import hamb from '@/assets/svg/hamburger.svg';
+import hambDark from '@/assets/svg/hamburgerdark.svg';
 import close from '@/assets/svg/close.svg';
 
 export default function Header() {
+	const pathname = usePathname();
 	const [scrolled, setScrolled] = useState(false);
 	const [menuOpen, setMenuOpen] = useState(false);
-
+	const isDarkTheme = pathname === '/thank-you';
 	useEffect(() => {
 		const handleScroll = () => {
 			setScrolled(window.scrollY > 100);
@@ -33,15 +36,27 @@ export default function Header() {
 	}, [menuOpen]);
 
 	return (
-		<header className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
+		<header
+			className={`${styles.header} ${scrolled ? styles.scrolled : ''} ${isDarkTheme ? styles.darkTheme : ''}`}
+		>
 			<div className='container'>
 				<div className={`${styles.header__container}`}>
 					<Link href='/'>
-						<Image src={logo} alt='logo' width={150} height={39} />
+						<Image
+							src={isDarkTheme ? logoDark : logo}
+							alt='logo'
+							width={150}
+							height={39}
+						/>
 					</Link>
 					{!menuOpen && (
 						<button className={styles.burger} onClick={() => setMenuOpen(true)}>
-							<Image src={hamb} alt='menu' width={40} height={40} />
+							<Image
+								src={isDarkTheme ? hambDark : hamb}
+								alt='menu'
+								width={40}
+								height={40}
+							/>
 						</button>
 					)}
 					<nav className={`${styles.header__menu}`}>

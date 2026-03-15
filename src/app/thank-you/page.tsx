@@ -2,8 +2,6 @@ import Image from 'next/image';
 import styles from './ThankYou.module.scss';
 import interiorImg from '@/assets/img/thankbg.webp';
 
-// Імпортуйте ваше зображення інтер'єру
-
 export default function ThankYouPage() {
 	return (
 		<main className={styles.thankYouPage}>

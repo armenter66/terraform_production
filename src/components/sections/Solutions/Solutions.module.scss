@@ -36,6 +36,7 @@
 	}
 	&__card {
 		position: sticky;
+		top: calc(15vh + (var(--index) * 45px));
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -79,9 +80,11 @@
 			font-size: 16px;
 			padding: 35px;
 			height: 220px;
+
+			top: calc(240px + (var(--index) * 20px));
 		}
 		&__leftSide {
-			position: static;
+			top: 100px;
 		}
 		&__rightSide {
 			gap: 100px;

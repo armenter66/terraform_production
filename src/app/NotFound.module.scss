@@ -1,0 +1,146 @@
+@use '@/styles/variables' as *;
+
+.notFoundPage {
+	margin-top: -150px;
+	display: flex;
+	height: 100vh; /* Займає всю висоту екрана */
+	width: 100%;
+	background-color: #231410; /* Темний $brown_main */
+
+	@media (max-width: 992px) {
+		flex-direction: column;
+		height: auto;
+		min-height: 100vh;
+	}
+}
+
+/* === ЛІВА ЧАСТИНА (ФОТО) === */
+.imageSide {
+	flex: 1;
+	position: relative;
+	width: 100%;
+
+	.bgImage {
+		object-fit: cover;
+	}
+
+	@media (max-width: 992px) {
+		/* На мобільних фото займає менше місця (наприклад, 40% висоти екрана) */
+		height: 40vh;
+		flex: none;
+	}
+}
+
+/* === ПРАВА ЧАСТИНА (ТЕКСТ) === */
+.contentSide {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 40px;
+
+	@media (max-width: 992px) {
+		flex: none;
+		padding: 60px 20px;
+	}
+}
+
+.contentInner {
+	max-width: 500px;
+	width: 100%;
+}
+
+.title {
+	font-size: 64px;
+	font-weight: 500;
+	line-height: 1.1;
+	color: #f8f3ea; /* Світлий $beg_color */
+	margin-bottom: 60px;
+
+	@media (max-width: 1200px) {
+		font-size: 48px;
+	}
+	@media (max-width: 768px) {
+		font-size: 40px;
+		margin-bottom: 40px;
+	}
+}
+
+/* Плашка */
+.card {
+	background-color: #f8f3ea;
+	padding: 40px;
+	border-radius: 20px;
+
+	@media (max-width: 768px) {
+		padding: 30px 20px;
+	}
+}
+
+.text {
+	font-size: 18px;
+	font-weight: 300;
+	color: #4a3c31;
+	line-height: 1.5;
+	margin-bottom: 40px;
+
+	@media (max-width: 768px) {
+		font-size: 16px;
+		margin-bottom: 30px;
+	}
+}
+
+/* === КНОПКА З РАМКОЮ І ЗРІЗАНИМИ КУТАМИ === */
+/* Магія: ми створюємо зовнішній блок чорного кольору, а всередині - трохи менший блок кремового кольору. Це візуально створює "рамку". */
+.outlineBtn {
+	display: inline-flex;
+	text-decoration: none;
+	background-color: #231410; /* Колір "рамки" */
+	padding: 1px; /* Товщина "рамки" */
+	border-radius: 12px;
+
+	/* Відрізаємо зовнішні кути */
+	clip-path: polygon(
+		16px 0,
+		100% 0,
+		100% calc(100% - 16px),
+		calc(100% - 16px) 100%,
+		0 100%,
+		0 16px
+	);
+
+	transition: opacity 0.3s ease;
+
+	&:hover {
+		opacity: 0.8;
+	}
+
+	/* Внутрішній блок */
+	.btnInner {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 12px;
+		background-color: #f8f3ea; /* Колір фону кнопки (збігається з плашкою) */
+		color: #231410;
+		font-size: 16px;
+		font-weight: 600;
+		padding: 16px 32px;
+		width: 100%;
+		border-radius: 11px; /* На 1px менше за зовнішній */
+
+		/* Відрізаємо внутрішні кути трохи меншим радіусом */
+		clip-path: polygon(
+			15px 0,
+			100% 0,
+			100% calc(100% - 15px),
+			calc(100% - 15px) 100%,
+			0 100%,
+			0 15px
+		);
+
+		@media (max-width: 768px) {
+			padding: 14px 24px;
+		}
+	}
+}

@@ -269,9 +269,10 @@
 			gap: 150px;
 		}
 		&__item1 {
-			margin-left: 70px;
+			margin-left: 50px;
 			img {
 				max-height: 392px;
+				max-width: 300px;
 			}
 		}
 
@@ -285,7 +286,7 @@
 		}
 	}
 	.axisVertical {
-		left: -60px;
+		left: -40px;
 	}
 
 	.svgWrapperVertical {
@@ -295,6 +296,7 @@
 		font-size: 12px;
 	}
 	.axisHorizontal {
+		left: -65px;
 		bottom: -40px;
 	}
 	.svgWrapperHorizontal {
