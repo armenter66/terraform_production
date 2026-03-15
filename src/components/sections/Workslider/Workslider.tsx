@@ -11,7 +11,7 @@ export default function Workslider() {
 		<section className={styles.workslider}>
 			<div className='container'>
 				<h2>
-					Terraform працює <span>для тих, хто рахує результат</span>
+					Terraform працює <span> для тих, хто рахує результат</span>
 				</h2>
 			</div>
 			<div className={styles.sliderWrapper}>

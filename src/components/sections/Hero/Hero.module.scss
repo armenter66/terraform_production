@@ -23,7 +23,8 @@
 	}
 	&__accent {
 		font-family: var(--font-cormorant);
-		font-weight: 300;
+		font-weight: 500;
+		font-style: italic;
 		font-size: 160px;
 		&:nth-child(3) {
 			padding-left: 185px;
@@ -124,17 +125,36 @@
 @media (max-width: 1024px) {
 	.hero {
 		margin-top: -100px;
+		&__main {
+			h1 {
+				text-align: center !important;
+				span {
+					&:nth-child(2) {
+						text-align: center;
+						padding-left: 0px;
+					}
+				}
+			}
+		}
 		&__box {
 			margin-top: 135px;
 			padding: 32px;
 			flex-direction: column;
 			gap: 32px;
+
 			p {
 				font-size: 18px;
+				text-align: center;
 				span {
 					padding-top: 18px;
 					font-size: 14px;
 				}
+			}
+		}
+		&__accent {
+			&:nth-child(3) {
+				text-align: center;
+				padding-left: 0px;
 			}
 		}
 		button {

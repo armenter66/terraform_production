@@ -1,0 +1,43 @@
+.scrollToTop {
+	position: fixed;
+	bottom: 40px;
+	right: 40px;
+	z-index: 99; // Щоб була поверх інших елементів
+	background: transparent;
+	border: none;
+	padding: 0;
+	cursor: pointer;
+
+	/* Початковий стан: прихована і трохи опущена вниз */
+	opacity: 0;
+	visibility: hidden;
+	transform: translateY(20px);
+	transition:
+		opacity 0.3s ease,
+		transform 0.3s ease,
+		visibility 0.3s ease;
+
+	/* Стан, коли ми додали клас .visible (після скролу) */
+	&.visible {
+		opacity: 1;
+		visibility: visible;
+		transform: translateY(0);
+	}
+
+	/* Анімація при наведенні (легке підняття) */
+	&:hover {
+		transform: translateY(-4px);
+	}
+
+	/* Адаптив для мобільних: менші відступи від країв екрану */
+	@media (max-width: 768px) {
+		bottom: 20px;
+		right: 20px;
+
+		/* Трохи зменшуємо SVG на телефонах, якщо потрібно */
+		svg {
+			width: 38px;
+			height: 38px;
+		}
+	}
+}

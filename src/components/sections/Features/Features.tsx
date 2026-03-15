@@ -1,4 +1,6 @@
 import styles from './Features.module.scss';
+import Image from 'next/image';
+import terra from '@/assets/svg/terraform.svg';
 
 export default function Features() {
 	return (
@@ -23,6 +25,7 @@ export default function Features() {
 							традиційних матеріалів
 						</li>
 					</ul>
+					<Image src={terra} width={185} height={29} alt='terra' className={styles.features__terra}/>
 				</div>
 			</div>
 		</section>

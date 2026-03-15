@@ -5,6 +5,7 @@ import Header from '@/components/layout/Header/Header';
 import Footer from '@/components/layout/Footer/Footer';
 import { ModalProvider } from '@/context/ModalContext';
 import ContactModal from '@/components/ui/Modal/ContactModal';
+import ScrollToTop from '@/components/ScrollTop/ScrollToTop';
 
 const helvetica = localFont({
 	src: [
@@ -60,6 +61,7 @@ export default function RootLayout({
 				<ModalProvider>
 					<Header />
 					{children}
+					<ScrollToTop />
 					<ContactModal />
 					<Footer />
 				</ModalProvider>

@@ -116,9 +116,13 @@
 @media (max-width: 1024px) {
 	.workslider {
 		padding: 50px 0 50px 0;
+		background-attachment: fixed;
 		h2 {
 			font-size: 36px;
 			line-height: 110%;
+			span {
+				display: block;
+			}
 		}
 		.sliderWrapper {
 			margin-top: 40px;
