@@ -219,6 +219,7 @@
 			p {
 				max-width: 360px;
 				font-size: 30px;
+				margin: 0 auto;
 			}
 		}
 		&__box {
@@ -253,8 +254,8 @@
 			}
 		}
 		&__image {
-			min-height: 200px;
-			height: 250px !important;
+			min-height: 230px;
+			height: 350px !important;
 			object-fit: cover;
 			object-position: 50% 70%;
 		}
