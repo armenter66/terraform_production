@@ -8,7 +8,7 @@ import ut from '@/assets/svg/youtube.svg';
 
 export default function Footer() {
 	return (
-		<footer className={styles.footer}>
+		<footer className={styles.footer} id='footer'>
 			<div className='container'>
 				<div className={styles.footer__container}>
 					<div className={styles.footer__item1}>

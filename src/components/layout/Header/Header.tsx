@@ -60,10 +60,10 @@ export default function Header() {
 						</button>
 					)}
 					<nav className={`${styles.header__menu}`}>
-						<Link href='/about'> Terraform Стіни </Link>
-						<Link href='/catalog'> Terraform Підлога </Link>
-						<Link href='/contact'> Партнери </Link>
-						<Link href='/contact'> Контакти </Link>
+						<Link href='/#wall'> Terraform Стіни </Link>
+						<Link href='/#floor'> Terraform Підлога </Link>
+						<Link href='/#partners'> Партнери </Link>
+						<Link href='/#footer'> Контакти </Link>
 					</nav>
 					<div className={`${styles.mobileMenu} ${menuOpen ? styles.open : ''}`}>
 						<Link href='/'>

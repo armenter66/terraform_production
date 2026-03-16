@@ -32,7 +32,7 @@ export default function Partners() {
 	}, []);
 
 	return (
-		<section className={styles.partners}>
+		<section className={styles.partners} id='partners'>
 			<div className='container'>
 				<div className={styles.partners__container}>
 					<h2>Переваги партнерства</h2>
