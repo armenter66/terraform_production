@@ -12,7 +12,7 @@
 
 .modal {
 	background: $beg_color;
-	padding: 70px 60px;
+	padding: 50px;
 	border-radius: 14px;
 	width: 770px;
 	position: relative;
@@ -114,22 +114,26 @@
 
 .form {
 	width: 100%;
-	margin-top: 72px;
+	margin-top: 60px;
 	display: flex;
 	flex-direction: column;
-	gap: 50px;
+	gap: 40px;
 	position: relative;
 	&__flex {
 		display: flex;
-		gap: 50px;
+		gap: 40px;
 	}
 	p {
 		color: red;
 		font-size: 12px;
 		margin-top: 0px;
 		position: relative;
-		display: flex;
+		padding: 0;
+		text-align: left;
 	}
+	// input[aria-invalid='true'] {
+	// 	border-bottom: 1px solid red;
+	// }
 	input {
 		background: none;
 		width: 100%;
@@ -139,12 +143,12 @@
 
 		color: $brown_main;
 		line-height: 130%;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: $light300;
 		&::placeholder {
 			color: rgba(35, 20, 16, 0.2);
 			line-height: 130%;
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: $light300;
 		}
 	}
@@ -157,15 +161,24 @@
 
 		color: $brown_main;
 		line-height: 130%;
-		font-size: 20px;
+		font-size: 18px;
 		font-weight: $light300;
 		&::placeholder {
 			color: rgba(35, 20, 16, 0.2);
 			line-height: 130%;
-			font-size: 20px;
+			font-size: 18px;
 			font-weight: $light300;
 		}
 	}
+}
+
+.field {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	align-items: start;
+	justify-content: start;
+	gap: 10px;
 }
 
 @media (max-width: 1024px) {
@@ -211,6 +224,9 @@
 			&::placeholder {
 				font-size: 14px;
 			}
+		}
+		p {
+			font-size: 10px;
 		}
 	}
 	.btn {

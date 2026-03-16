@@ -2,6 +2,8 @@
 
 import { useEffect } from 'react';
 import styles from './ComparisonModal.module.scss';
+import Image from 'next/image';
+import logoDark from '@/assets/svg/logodarknew.svg';
 
 // Інтерфейс для пропсів
 interface ComparisonModalProps {
@@ -66,6 +68,8 @@ export default function ComparisonModal({
 						</tbody>
 					</table>
 				</div>
+
+				<Image src={logoDark} width={150} height={39} alt='logo' />
 			</div>
 		</div>
 	);

@@ -24,6 +24,12 @@
 	box-shadow: 0 24px 48px rgba(0, 0, 0, 0.2);
 	animation: fadeIn 0.3s ease-out;
 
+	img {
+		display: block;
+		margin: 0 auto;
+		margin-top: 20px;
+	}
+
 	@media (max-width: 768px) {
 		padding: 50px 20px 30px;
 		max-height: 95vh;
@@ -75,10 +81,14 @@
 	text-align: left;
 	background-color: transparent;
 
+	th {
+		text-align: center;
+	}
 	th,
 	td {
 		padding: 24px 20px;
 		color: #231410;
+
 		&:first-child {
 			border-right: 1px solid $brown_light;
 			width: 50%;

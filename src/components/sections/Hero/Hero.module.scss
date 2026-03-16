@@ -111,7 +111,7 @@
 		&__accent {
 			font-size: 64px;
 			&:nth-child(3) {
-				padding-left: 75px;
+				padding-left: 80px;
 			}
 		}
 		&__box {
@@ -127,10 +127,8 @@
 		margin-top: -100px;
 		&__main {
 			h1 {
-				text-align: center !important;
 				span {
 					&:nth-child(2) {
-						text-align: center;
 						padding-left: 0px;
 					}
 				}
@@ -145,6 +143,7 @@
 			p {
 				font-size: 18px;
 				text-align: center;
+				max-width: 270px;
 				span {
 					padding-top: 18px;
 					font-size: 14px;
@@ -153,8 +152,8 @@
 		}
 		&__accent {
 			&:nth-child(3) {
-				text-align: center;
-				padding-left: 0px;
+				text-align: right;
+				line-height: 55%;
 			}
 		}
 		button {

@@ -62,11 +62,19 @@
 				flex-direction: column;
 				gap: 50px;
 			}
+			&__column2 {
+				.master__box__body__item {
+					&:nth-child(1) {
+						padding-bottom: 13px;
+					}
+				}
+			}
 			&__item {
 				display: flex;
 				gap: 32px;
 				align-items: center;
 				max-width: 420px;
+
 				h2 {
 					font-size: 40px;
 					line-height: 90%;
@@ -141,11 +149,11 @@
 			padding: 32px 22px;
 			&__body {
 				margin-top: -50px;
-				gap: 24px;
+				gap: 25px;
 				flex-direction: column;
 				padding: 0 10px;
 				&__item {
-					gap: 24px;
+					gap: 20px;
 					h2 {
 						font-size: 24px;
 						text-align: center;
@@ -157,11 +165,19 @@
 					}
 					img {
 						width: 24px;
+						height: 24px;
 					}
 				}
 				&__column1,
 				&__column2 {
-					gap: 24px;
+					gap: 25px;
+				}
+				&__column2 {
+					.master__box__body__item {
+						&:nth-child(1) {
+							padding-bottom: 0px;
+						}
+					}
 				}
 			}
 		}

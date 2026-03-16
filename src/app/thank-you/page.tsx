@@ -19,13 +19,8 @@ export default function ThankYouPage() {
 
 						<div className={styles.rightCol}>
 							<p className={styles.subtitle}>
-								Ми зв’яжемося з вами якомога
-								<br />
-								швидше, щоб запропонувати рішення,
-								<br />
-								яке бездоганно відповідатиме вашому
-								<br />
-								простору.
+								Ми зв’яжемося з вами якомога швидше, щоб запропонувати рішення, яке
+								бездоганно відповідатиме вашому простору.
 							</p>
 
 							<a href='./' className='main-btn'>

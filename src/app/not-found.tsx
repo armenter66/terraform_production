@@ -5,20 +5,14 @@ export default function NotFound() {
 		<main className={styles.notFoundPage}>
 			<div className={styles.contentSide}>
 				<div className={styles.contentInner}>
-					<h1 className={styles.title}>
-						Ця сторінка
-						<br />
-						більше не є<br />
-						частиною
-						<br />
-						проєкту
-					</h1>
+					<h1 className={styles.title}>Ця сторінка більше не є частиною проєкту</h1>
 
 					<div className={styles.card}>
 						<p className={styles.text}>
 							Можливо, її було переміщено
 							<br />
 							або вона втратила актуальність.
+							<br />
 							<br />
 							Пропонуємо повернутися
 							<br />

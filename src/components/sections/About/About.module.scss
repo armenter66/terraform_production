@@ -268,9 +268,10 @@
 			&__container {
 				gap: 10px;
 				justify-content: center;
+				width: 100%;
 			}
 			&__item {
-				width: 160px;
+				width: 100%;
 				padding: 18px;
 				h3 {
 					font-size: 24px;

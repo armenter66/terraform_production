@@ -15,6 +15,7 @@ const schema = z.object({
 		.regex(/^\+380\d{9}$/, 'Телефон має бути у форматі +380XXXXXXXXX'),
 	email: z.string().email('Некоректний email'),
 	message: z.string().optional(),
+	company: z.string().optional(),
 });
 
 type FormData = z.infer<typeof schema>;
@@ -50,6 +51,8 @@ export default function ContactModal() {
 		if (res.ok) {
 			closeModal();
 			router.push('/thank-you');
+		} else {
+			alert('Помилка відправки форми');
 		}
 	};
 
@@ -94,30 +97,43 @@ export default function ContactModal() {
 				</span>
 
 				<form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
-					<input type='text' placeholder='Імʼя' {...register('name')} />
+					<input
+						type='text'
+						{...register('company')}
+						style={{ display: 'none' }}
+						tabIndex={-1}
+						autoComplete='off'
+					/>
+					<div className={styles.field}>
+						<input type='text' placeholder='Імʼя' {...register('name')} />
+						{errors.name && <p>{errors.name.message}</p>}
+					</div>
 
-					{errors.name && <p>{errors.name.message}</p>}
 					<div className={styles.form__flex}>
-						<Controller
-							name='phone'
-							control={control}
-							render={({ field }) => (
-								<IMaskInput
-									mask='+{380} 00 000 00 00'
-									value={field.value || '+380'}
-									onAccept={(value: any) =>
-										field.onChange(String(value).replace(/\s/g, ''))
-									}
-									onBlur={field.onBlur}
-									placeholder='+380'
-									className={styles.input}
-								/>
-							)}
-						/>
-						{errors.phone && <p>{errors.phone.message}</p>}
-						<input type='email' placeholder='Email' {...register('email')} />
+						<div className={styles.field}>
+							<Controller
+								name='phone'
+								control={control}
+								render={({ field }) => (
+									<IMaskInput
+										mask='+{380} 00 000 00 00'
+										value={field.value || '+380'}
+										onAccept={(value: any) =>
+											field.onChange(String(value).replace(/\s/g, ''))
+										}
+										onBlur={field.onBlur}
+										placeholder='+380'
+									/>
+								)}
+							/>
 
-						{errors.email && <p>{errors.email.message}</p>}
+							{errors.phone && <p>{errors.phone.message}</p>}
+						</div>
+
+						<div className={styles.field}>
+							<input type='email' placeholder='Email' {...register('email')} />
+							{errors.email && <p>{errors.email.message}</p>}
+						</div>
 					</div>
 					<textarea
 						// name='textfield'
