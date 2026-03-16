@@ -6,7 +6,7 @@ import { useModal } from '@/context/ModalContext';
 import Image from 'next/image';
 import styles from './Partners.module.scss';
 // import arrowdia from '../../../assets/svg/btnarrowmain.svg';
-import maskbg from '../../../assets/img/maskpartners.webp';
+import maskbg from '../../../assets/img/maskpartners.png';
 
 export default function Partners() {
 	const [isVisible, setIsVisible] = useState(false);

@@ -3,9 +3,12 @@
 .hero {
 	margin-top: -80px;
 	padding: 200px 0 72px 0;
-	background: url('../../../assets/img/bgmain.webp') center center/cover
+	background: url('../../../assets/img/bgmain.png') center center/cover
 		no-repeat;
 	&__main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		h1 {
 			max-width: 900px;
 			margin: 0 auto;
@@ -27,7 +30,7 @@
 		font-style: italic;
 		font-size: 160px;
 		&:nth-child(3) {
-			padding-left: 185px;
+			padding-left: 195px;
 		}
 	}
 	a {

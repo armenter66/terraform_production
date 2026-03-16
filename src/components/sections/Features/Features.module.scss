@@ -1,7 +1,7 @@
 @use '@/styles/variables' as *;
 
 .features {
-	background: url('../../../assets/img/suhiibg.webp') center center/cover
+	background: url('../../../assets/img/suhiibg.png') center center/cover
 		no-repeat;
 	padding: 176px 0;
 	&__box {
@@ -32,13 +32,12 @@
 
 @media (max-width: 1024px) {
 	.features {
-		background: url('../../../assets/img/suhiibgmob.webp') center center/cover
-			no-repeat;
 		padding: 0;
 		padding-top: 235px;
 		&__box {
 			padding: 24px 35px 50px 35px;
 			position: relative;
+			margin: 0 auto;
 		}
 		&__list {
 			gap: 24px;
@@ -58,5 +57,12 @@
 			left: 50%;
 			transform: translateX(-50%);
 		}
+	}
+}
+
+@media (max-width: 768px) {
+	.features {
+		background: url('../../../assets/img/suhiibgmob.png') center center/cover
+			no-repeat;
 	}
 }

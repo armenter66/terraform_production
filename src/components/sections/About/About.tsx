@@ -1,6 +1,8 @@
 import Image from 'next/image';
-import image1 from '@/assets/img/image1.webp';
-import image2 from '@/assets/img/image2.webp';
+
+import image1 from '@/assets/img/image1.jpg';
+
+import image2 from '@/assets/img/image2.jpg';
 // import videobg from '@/assets/img/videobg.webp';
 import styles from './About.module.scss';
 
@@ -47,8 +49,8 @@ export default function About() {
 				<div className={`${styles.about__item1}`}>
 					<Image
 						src={image1}
-						width={570}
-						height={470}
+						width={580}
+						height={720}
 						alt='img1'
 						className={styles.about__image}
 					/>
@@ -76,8 +78,8 @@ export default function About() {
 				<div className={`${styles.about__item2}`}>
 					<Image
 						src={image2}
-						width={570}
-						height={470}
+						width={580}
+						height={720}
 						alt='img2'
 						className={styles.about__image}
 					/>

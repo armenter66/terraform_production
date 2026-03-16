@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import wall from '@/assets/img/floor1.webp';
-import floor from '@/assets/img/floor.webp';
+import floor from '@/assets/img/floor2.webp';
 import styles from './Floor.module.scss';
 
 export default function Floor() {
