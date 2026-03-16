@@ -1,66 +1,60 @@
 @use '@/styles/variables' as *;
 
 .notFoundPage {
+	padding: 250px 135px 120px 135px;
 	margin-top: -150px;
 	display: flex;
-	height: 100vh; /* Займає всю висоту екрана */
+	justify-content: end;
 	width: 100%;
-	background-color: #231410; /* Темний $brown_main */
+	background: url('../assets/img/404bg.webp') center center/cover no-repeat;
 
-	@media (max-width: 992px) {
-		flex-direction: column;
-		height: auto;
-		min-height: 100vh;
+	&__btnImage {
+		position: absolute;
+		display: block;
+		width: 400px;
+		left: 0px;
+		top: 0;
+		height: 100%;
+		z-index: 0;
+		fill: $beg_color;
+		transition: 0.2s linear;
+		@media (max-width: 1024px) {
+			width: 300px;
+			height: 60px;
+		}
 	}
-}
-
-/* === ЛІВА ЧАСТИНА (ФОТО) === */
-.imageSide {
-	flex: 1;
-	position: relative;
-	width: 100%;
-
-	.bgImage {
-		object-fit: cover;
+	&__arrowdia {
+		display: block;
+		width: 12px;
+		height: 12px;
+		z-index: 1;
+		fill: $brown_main;
 	}
-
-	@media (max-width: 992px) {
-		/* На мобільних фото займає менше місця (наприклад, 40% висоти екрана) */
-		height: 40vh;
-		flex: none;
-	}
-}
-
-/* === ПРАВА ЧАСТИНА (ТЕКСТ) === */
-.contentSide {
-	flex: 1;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 40px;
-
-	@media (max-width: 992px) {
-		flex: none;
-		padding: 60px 20px;
+	@media (max-width: 1024px) {
+		justify-content: center;
+		padding: 280px 30px 100px 30px;
 	}
 }
 
 .contentInner {
-	max-width: 500px;
+	max-width: 470px;
 	width: 100%;
+	margin-left: auto;
+
+	@media (max-width: 1024px) {
+		padding: 0 40px;
+	}
 }
 
 .title {
-	font-size: 64px;
-	font-weight: 500;
-	line-height: 1.1;
-	color: #f8f3ea; /* Світлий $beg_color */
+	font-size: 72px;
+	font-weight: $medium550;
+	line-height: 100%;
+	color: $beg_color;
 	margin-bottom: 60px;
 
-	@media (max-width: 1200px) {
-		font-size: 48px;
-	}
-	@media (max-width: 768px) {
+	@media (max-width: 1024px) {
+		text-align: center;
 		font-size: 40px;
 		margin-bottom: 40px;
 	}
@@ -68,79 +62,70 @@
 
 /* Плашка */
 .card {
-	background-color: #f8f3ea;
-	padding: 40px;
-	border-radius: 20px;
+	background-color: $beg_color;
+	padding: 35px;
+	border-radius: 14px;
 
-	@media (max-width: 768px) {
+	a {
+		width: 400px;
+		height: 64px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		white-space: nowrap;
+
+		padding: 29px 50px 29px 50px;
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 14px;
+		border: none;
+		span {
+			font-size: 20px;
+			font-weight: 550;
+			line-height: 90%;
+			color: $brown_main;
+
+			display: flex;
+			justify-content: space-between;
+			gap: 14px;
+			z-index: 2;
+		}
+		&:hover {
+			.svg-bg {
+				fill: $orange;
+			}
+			.svg-bg path {
+				stroke: $orange;
+			}
+		}
+		.svg-bg {
+			stroke: #231410;
+		}
+
+		@media (max-width: 1024px) {
+			width: 300px;
+			height: 60px;
+		}
+	}
+
+	@media (max-width: 1024px) {
 		padding: 30px 20px;
+		max-width: 100%;
 	}
 }
 
 .text {
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: 300;
-	color: #4a3c31;
-	line-height: 1.5;
-	margin-bottom: 40px;
+	color: $brown_main;
+	line-height: 130%;
+	margin-bottom: 32px;
 
 	@media (max-width: 768px) {
 		font-size: 16px;
 		margin-bottom: 30px;
-	}
-}
-
-/* === КНОПКА З РАМКОЮ І ЗРІЗАНИМИ КУТАМИ === */
-/* Магія: ми створюємо зовнішній блок чорного кольору, а всередині - трохи менший блок кремового кольору. Це візуально створює "рамку". */
-.outlineBtn {
-	display: inline-flex;
-	text-decoration: none;
-	background-color: #231410; /* Колір "рамки" */
-	padding: 1px; /* Товщина "рамки" */
-	border-radius: 12px;
-
-	/* Відрізаємо зовнішні кути */
-	clip-path: polygon(
-		16px 0,
-		100% 0,
-		100% calc(100% - 16px),
-		calc(100% - 16px) 100%,
-		0 100%,
-		0 16px
-	);
-
-	transition: opacity 0.3s ease;
-
-	&:hover {
-		opacity: 0.8;
-	}
-
-	/* Внутрішній блок */
-	.btnInner {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		gap: 12px;
-		background-color: #f8f3ea; /* Колір фону кнопки (збігається з плашкою) */
-		color: #231410;
-		font-size: 16px;
-		font-weight: 600;
-		padding: 16px 32px;
-		width: 100%;
-		border-radius: 11px; /* На 1px менше за зовнішній */
-
-		/* Відрізаємо внутрішні кути трохи меншим радіусом */
-		clip-path: polygon(
-			15px 0,
-			100% 0,
-			100% calc(100% - 15px),
-			calc(100% - 15px) 100%,
-			0 100%,
-			0 15px
-		);
-
-		@media (max-width: 768px) {
-			padding: 14px 24px;
-		}
+		text-align: center;
 	}
 }
