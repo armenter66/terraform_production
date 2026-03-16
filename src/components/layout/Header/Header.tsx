@@ -73,22 +73,22 @@ export default function Header() {
 							<Image src={close} alt='close menu' width={40} height={40} />
 						</button>
 						<nav>
-							<Link href='/about' onClick={() => setMenuOpen(false)}>
+							<Link href='/#wall' onClick={() => setMenuOpen(false)}>
 								Terraform Стіни
 							</Link>
-							<Link href='/catalog' onClick={() => setMenuOpen(false)}>
+							<Link href='/#floor' onClick={() => setMenuOpen(false)}>
 								Terraform Підлога
 							</Link>
-							<Link href='/partners' onClick={() => setMenuOpen(false)}>
+							<Link href='/#partners' onClick={() => setMenuOpen(false)}>
 								Партнери
 							</Link>
-							<Link href='/contact' onClick={() => setMenuOpen(false)}>
+							<Link href='/#footer' onClick={() => setMenuOpen(false)}>
 								Контакти
 							</Link>
 						</nav>
 						<ul className={`${styles.header__social}`}>
 							<li>
-								<a href='https://www.instagram.com/terraform_ua/'>
+								<a target='_blank' href='https://www.instagram.com/terraform_ua/'>
 									<svg
 										width='50'
 										height='50'
@@ -105,7 +105,7 @@ export default function Header() {
 								</a>
 							</li>
 							<li>
-								<a href='https://www.facebook.com/terraform.ukraine'>
+								<a target='_blank' href='https://www.facebook.com/terraform.ukraine'>
 									<svg
 										width='50'
 										height='50'
@@ -122,7 +122,7 @@ export default function Header() {
 								</a>
 							</li>
 							<li>
-								<a href='#'>
+								<a target='_blank' href='http://www.tiktok.com/@terraform_ukraine'>
 									<svg
 										width='50'
 										height='50'
@@ -139,7 +139,7 @@ export default function Header() {
 								</a>
 							</li>
 							<li>
-								<a href='#'>
+								<a target='_blank' href='https://www.youtube.com/@Terraform_ukraine'>
 									<svg
 										width='50'
 										height='50'

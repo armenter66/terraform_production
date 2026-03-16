@@ -24,6 +24,7 @@ export default function Hero() {
 						</span>
 					</p>
 					<a
+						target='_blank'
 						className='main-btn'
 						href='https://drive.google.com/drive/folders/19rt7JwJyujRDxrTgsb5W3-j7k_DF8uDf'
 					>

@@ -24,25 +24,25 @@ export default function Footer() {
 						<div className={styles.footer__menu}>
 							<ul>
 								<li>
-									<a href='#'>Terraform Стіни</a>
+									<a href='./#wall'>Terraform Стіни</a>
 								</li>
 								<li>
-									<a href='#'>Terraform Підлога</a>
+									<a href='./#floor'>Terraform Підлога</a>
 								</li>
 							</ul>
 							<ul>
 								<li>
-									<a href='#'>Партнери</a>
+									<a href='./#partners'>Партнери</a>
 								</li>
 								<li>
-									<a href='#'>Контакти</a>
+									<a href='./#footer'>Контакти</a>
 								</li>
 							</ul>
 						</div>
 
 						<ul className={`${styles.footer__social} ${styles.footer__social1}`}>
 							<li>
-								<a href='https://www.instagram.com/terraform_ua/'>
+								<a href='https://www.instagram.com/terraform_ua/' target='_blank'>
 									<svg
 										width='40'
 										height='40'
@@ -59,7 +59,7 @@ export default function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href='https://www.facebook.com/terraform.ukraine'>
+								<a href='https://www.facebook.com/terraform.ukraine' target='_blank'>
 									<svg
 										width='40'
 										height='40'
@@ -76,7 +76,7 @@ export default function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href='#'>
+								<a href='http://www.tiktok.com/@terraform_ukraine' target='_blank'>
 									<svg
 										width='40'
 										height='40'
@@ -93,7 +93,7 @@ export default function Footer() {
 								</a>
 							</li>
 							<li>
-								<a href='#'>
+								<a href='https://www.youtube.com/@Terraform_ukraine' target='_blank'>
 									<svg
 										width='40'
 										height='40'

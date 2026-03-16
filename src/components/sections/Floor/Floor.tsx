@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import wall from '@/assets/img/wall.webp';
+import wall from '@/assets/img/floor1.webp';
 import floor from '@/assets/img/floor.webp';
 import styles from './Floor.module.scss';
 
